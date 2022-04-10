@@ -7,10 +7,10 @@ import (
 )
 
 type Memory struct {
-	TotalPhysicalBytes int64       `json:"total_physical_bytes"`
-	TotalUsableBytes   int64       `json:"total_usable_bytes"`
-	SupportedPageSizes interface{} `json:"supported_page_sizes"`
-	Modules            []Modules   `json:"modules"`
+	TotalPhysicalBytes int64 `json:"total_physical_bytes"`
+	TotalUsableBytes   int64 `json:"total_usable_bytes"`
+	//SupportedPageSizes interface{} `json:"supported_page_sizes"`
+	Modules []Modules `json:"modules"`
 }
 
 type Modules struct {
@@ -21,7 +21,7 @@ type Modules struct {
 	Vendor       string `json:"vendor"`
 }
 
-func (m *Memory) Json() {
+func (x *Memory) Get(m *Memory) {
 
 	mem, err := ghw.Memory()
 	if err != nil {
@@ -30,7 +30,7 @@ func (m *Memory) Json() {
 
 	m.TotalPhysicalBytes = mem.TotalPhysicalBytes
 	m.TotalUsableBytes = mem.TotalUsableBytes
-	m.SupportedPageSizes = mem.SupportedPageSizes
+	//m.SupportedPageSizes = mem.SupportedPageSizes
 
 	md := Modules{}
 	for _, y := range mem.Modules {
