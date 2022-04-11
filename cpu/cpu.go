@@ -14,10 +14,11 @@ type CPU struct {
 
 type Processors struct {
 	ID           int    `json:"id"`
-	TotalCores   int    `json:"total_cores"`
-	TotalThreads int    `json:"total_threads"`
 	Vendor       string `json:"vendor"`
 	Model        string `json:"model"`
+	TotalCores   int    `json:"total_cores"`
+	TotalThreads int    `json:"total_threads"`
+
 	//Capabilities interface{} `json:"capabilities"`
 	//Cores        interface{} `json:"cores"`
 }
