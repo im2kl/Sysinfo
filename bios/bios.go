@@ -15,7 +15,7 @@ type Bios struct {
 func (*Bios) Get(b *Bios) {
 	bi, err := ghw.BIOS()
 	if err != nil {
-		fmt.Printf("Error getting cpu info: %v", err)
+		fmt.Printf("Error getting bios info: %v", err)
 	}
 
 	b.Vendor = bi.Vendor

@@ -18,7 +18,7 @@ func (*Baseboard) Get(b *Baseboard) {
 
 	bb, err := ghw.Baseboard()
 	if err != nil {
-		fmt.Printf("Error getting net info: %v", err)
+		fmt.Printf("Error getting Baseboard info: %v", err)
 	}
 
 	b.AssetTag = bb.AssetTag

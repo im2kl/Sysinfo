@@ -20,7 +20,7 @@ func (*Product) Get(p *Product) {
 
 	pro, err := ghw.Product()
 	if err != nil {
-		fmt.Printf("Error getting net info: %v", err)
+		fmt.Printf("Error getting product info: %v", err)
 	}
 
 	p.Family = pro.Family
